@@ -3,7 +3,7 @@ properties([pipelineTriggers([githubPush()])])
 pipeline {
     environment {
         // name of the image without tag
-        dockerRepo = "varungujarathi9/jenkins-hello-world"
+        dockerRepo = "vlad891/mygitimage"
         dockerCredentials = 'docker_hub'
         dockerImageVersioned = ""
         dockerImageLatest = ""
@@ -17,7 +17,7 @@ pipeline {
             steps {
                 checkout([
                  $class: 'GitSCM',
-                 branches: [[name: 'master']],
+                 branches: [[name: 'main']],
                  userRemoteConfigs: [[
                     url: 'https://github.com/Vlad891/gitlabs.git',
                     credentialsId: '',
