@@ -1,0 +1,21 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: my-app
+  labels:
+    app : my-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      project: myapp
+  template:
+    metadata:
+      labels:
+        project: myapp   # Service will look for those PODS Labels!!!
+    spec:
+      containers:
+      - name : nginx 
+        image: adv4000/k8sphp:version2
+        ports:
+        - containerPort: 80

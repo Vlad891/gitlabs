@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-lb
+spec:
+  selector:
+    project: myapp    # Selecting PODS with those Labels
+  ports:
+    - name      : myapp-lb
+      protocol  : TCP
+      port      : 80  # Port on Load Balancer
+      targetPort: 80  # Port on POD
+  type: LoadBalancer
+  externalIPs:
+  - 54.160.181.205
