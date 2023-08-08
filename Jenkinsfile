@@ -19,7 +19,7 @@ pipeline {
                     branch 'main' 
             }
             steps {
-                echo "This text for main branch"
+                echo "This text for main branch!"
             }
         }
             stage('Deliver for development') {
@@ -27,7 +27,7 @@ pipeline {
                     branch 'develop' 
             }
             steps {
-                echo "This text for develop branch"
+                echo "This text for develop branch!"
             }
         }
     }
